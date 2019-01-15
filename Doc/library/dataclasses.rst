@@ -19,6 +19,8 @@ in :pep:`557`.
 The member variables to use in these generated methods are defined
 using :pep:`526` type annotations.  For example this code::
 
+  from dataclasses import dataclass
+
   @dataclass
   class InventoryItem:
       '''Class for keeping track of an item in inventory.'''
@@ -67,6 +69,8 @@ Module-level decorators, classes, and functions
    it acts as if it has the default values documented in this
    signature.  That is, these three uses of :func:`dataclass` are
    equivalent::
+
+     from dataclasses import dataclass
 
      @dataclass
      class C:
@@ -182,6 +186,9 @@ Module-level decorators, classes, and functions
    require additional per-field information.  To satisfy this need for
    additional information, you can replace the default field value
    with a call to the provided :func:`field` function.  For example::
+
+     from dataclasses import dataclass, field
+     from typing import List
 
      @dataclass
      class C:
